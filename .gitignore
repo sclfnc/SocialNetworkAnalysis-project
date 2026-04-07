@@ -11,6 +11,7 @@
 *.gpickle
 *.json
 *.gz
-*incidence_final.csv
 *.txt
 *data
+*.zip
+*.tar.gz
