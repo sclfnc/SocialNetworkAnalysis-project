@@ -1,0 +1,51 @@
+u,v,support,score_debias,fos_u,fos_v,same_L2,shared_L2
+doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,doi_dedup___::7db9b1a4d32fca838cc31c06d35582e5,417,16.73,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::0115f94b4333945408cd9a9c7dea2963,doi_dedup___::634f88b8e1e558a67f133168a51ce3b3,197,11.94,0302 clinical medicine,N/A,False,False
+doi_dedup___::2e5852452359d40380091d4bc4f0ce87,doi_dedup___::ab39650b755b1e2483d83046577ef305,163,11.3,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::a098462578dc48f1e2ebc9b2716fa43d,doi_dedup___::fcae2f51810d67254046fccf5e5e4fc5,259,11.15,0302 clinical medicine,N/A,False,False
+doi_dedup___::0115f94b4333945408cd9a9c7dea2963,doi_dedup___::d4ce4e1a498158492903c91b2579b570,255,10.93,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::60d9195111755aa9a6a54291a925c07b,doi_dedup___::ab39650b755b1e2483d83046577ef305,211,10.35,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::ab39650b755b1e2483d83046577ef305,doi_dedup___::fa0263571c5584feb05d8c0be6b678ee,140,10.1,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::0c58cd50baa982c679eb5e2385786c03,pmid_dedup__::be0a86e42893eb93d5b332f7e76ddb84,144,9.94,0302 clinical medicine,N/A,False,False
+doi_dedup___::0115f94b4333945408cd9a9c7dea2963,doi_dedup___::153f903e92f4151b1536a2c001120e2a,171,9.78,0302 clinical medicine,N/A,False,False
+doi_dedup___::781388f411114f6774c35ffd5f84c499,doi_dedup___::baee45ee275b0fc1a3e17d20aad007d5,482,9.19,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::0115f94b4333945408cd9a9c7dea2963,doi_dedup___::59d4ec9ecfc5de196d10fa095be2b4f5,188,9.12,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::59d4ec9ecfc5de196d10fa095be2b4f5,doi_dedup___::fc499997c570e1c5c5b9b0d99de90b5b,170,9.09,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,doi_dedup___::634f88b8e1e558a67f133168a51ce3b3,173,9.02,0302 clinical medicine,N/A,False,False
+doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,doi_dedup___::fc499997c570e1c5c5b9b0d99de90b5b,160,8.92,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,doi_dedup___::d4ce4e1a498158492903c91b2579b570,239,8.81,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::76cefde919ec60953ab7b58905ea11f9,pmid________::342454d16e75f3f103607764de0990f1,138,8.62,N/A,0301 basic medicine; 0303 health sciences,False,False
+doi_dedup___::781388f411114f6774c35ffd5f84c499,doi_dedup___::da5379a2ade787477315a548d4961fc6,345,8.15,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::59d4ec9ecfc5de196d10fa095be2b4f5,doi_dedup___::7db9b1a4d32fca838cc31c06d35582e5,198,7.62,0302 clinical medicine,0302 clinical medicine,True,True
+doi_________::a6cb28e7426cb40184755453ef510e6e,doi_________::b696b01815a5c9607748a4963007a18b,1813,7.58,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::d5f1cc8dc04c4b96cd1707f757352ce3,pmid________::c480c3423a833237e351781729c3481f,166,7.55,0302 clinical medicine,N/A,False,False
+doi_dedup___::5b217cbe80247309f1e109a2834996e4,doi_dedup___::7db9b1a4d32fca838cc31c06d35582e5,185,7.42,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::6d3aa82d3a366a012572950fa65b5d2d,doi_dedup___::70e2f7891318f4b3fca853229c7fdd09,170,7.25,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::59d4ec9ecfc5de196d10fa095be2b4f5,doi_dedup___::85f6533f5313d25742d988584fe6e8fb,156,7.16,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::878f346fe44e892c7827353356cde577,doi_dedup___::934e2b578958f0aff2be722674f70c2e,377,7.07,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,doi_dedup___::85f6533f5313d25742d988584fe6e8fb,145,6.94,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::60d9195111755aa9a6a54291a925c07b,doi_dedup___::a4e876f2a29e682d9a666ae9b24ecbe7,154,6.93,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::3ce5a4c27576240927a68b63468cc062,doi_dedup___::833a8e8a7712312bf4ebda3a78d22c7a,455,6.85,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::60d9195111755aa9a6a54291a925c07b,doi_dedup___::a2cbb7edea6d568c67a7a2ff65a878e6,177,6.81,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::153f903e92f4151b1536a2c001120e2a,doi_dedup___::1e5b1f310b6b5b308bfc0b39647a8f28,137,6.73,N/A,0302 clinical medicine,False,False
+doi_dedup___::5b217cbe80247309f1e109a2834996e4,doi_dedup___::634f88b8e1e558a67f133168a51ce3b3,126,6.57,0302 clinical medicine,N/A,False,False
+doi_dedup___::a4cf4e0afa56233822a02599c80a4e47,doi_dedup___::f36f4c1ca367e5b6f1b00a6497bc53e2,151,6.3,0301 basic medicine; 0302 clinical medicine,0301 basic medicine; 0302 clinical medicine,True,True
+doi_dedup___::153f903e92f4151b1536a2c001120e2a,doi_dedup___::d4ce4e1a498158492903c91b2579b570,148,6.17,N/A,0302 clinical medicine,False,False
+doi_dedup___::47d3f0a7bdedc1897768838fa4b25ce8,doi_dedup___::91c32a775030f57664c7cd6691dbd006,267,6.15,0301 basic medicine; 0302 clinical medicine,0301 basic medicine; 0302 clinical medicine,True,True
+doi_dedup___::524f2b0ea07bf517088a8ac5e089a7dc,doi_dedup___::78bb2ff3919ae7df715e94a657f4512b,426,6.08,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::2f284758859229700ba723887c0c7b65,doi_dedup___::796c5d56e1c2da3dd7ce4fab88194824,735,5.97,0103 physical sciences,0103 physical sciences,True,True
+doi_________::a6cb28e7426cb40184755453ef510e6e,doi_dedup___::d4703e4def6bab6820e7feea977a3b99,1781,5.8,0103 physical sciences,0103 physical sciences,True,True
+doi_________::b696b01815a5c9607748a4963007a18b,doi_dedup___::d4703e4def6bab6820e7feea977a3b99,1927,5.75,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::38b216735afe1fe9b98d454b4734010c,doi_dedup___::b9b50aa7c7988cda098fdc18b018e6e8,188,5.61,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::02bbea7aa0840dd31d827dd83aaab136,doi_dedup___::539f569c72f3e82d5f50f4282262c145,256,5.57,0103 physical sciences,N/A,False,False
+doi_dedup___::0ea0e3cf6379a5c5f14adbe39d0c14c2,doi_dedup___::3b7920a4b57fa840c851d8d846583c66,157,5.49,0301 basic medicine; 0303 health sciences; 0103 physical sciences,0103 physical sciences,False,True
+doi_dedup___::30217c0b9e636fbfeef57221107b8a8c,doi_dedup___::b8209110aa2bd25aac1a85236f7c49a5,163,5.45,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::70e11e5f24eda034b1aa14628e89defe,doi_dedup___::ba641b5d5dce345b410878e1d577ac9c,182,5.4,0302 clinical medicine,0302 clinical medicine,True,True
+doi_dedup___::2f284758859229700ba723887c0c7b65,doi_dedup___::781388f411114f6774c35ffd5f84c499,571,5.38,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::024d68d965d9643bdcb2813764b6b452,doi_dedup___::9f7d56ac7ffe53e7fbbfaf15f386c318,342,5.34,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::05d9058d782095cdac54b4f536bfba6f,doi_dedup___::3ce5a4c27576240927a68b63468cc062,364,5.25,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::78bb2ff3919ae7df715e94a657f4512b,doi_dedup___::833a8e8a7712312bf4ebda3a78d22c7a,355,5.07,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::833a8e8a7712312bf4ebda3a78d22c7a,doi_dedup___::a953d7ea952cd6bdb405103685d1d774,219,4.71,0103 physical sciences,0103 physical sciences,True,True
+doi_dedup___::781388f411114f6774c35ffd5f84c499,doi_dedup___::8f9534a632ed978c4d37f4d11369722c,492,4.7,0103 physical sciences,0301 basic medicine; 0303 health sciences; 0103 physical sciences,False,True
+doi_dedup___::4dc13b4e74c2a38b54c05bdb7c57dd9f,doi_dedup___::c16efc1fc669bf9856a6e43c8c511c38,250,4.63,N/A,0302 clinical medicine,False,False
+doi_dedup___::59d4ec9ecfc5de196d10fa095be2b4f5,doi_dedup___::d4ce4e1a498158492903c91b2579b570,129,4.56,0302 clinical medicine,0302 clinical medicine,True,True

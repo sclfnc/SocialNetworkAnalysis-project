@@ -6,19 +6,11 @@
 .idea/*
 .directory
 
-00_graph_construction/output/citations/*
-00_graph_construction/output/imgs/*
-00_graph_construction/output/graphs/*.gpickle
-00_graph_construction/output/graphs/*.json
-00_graph_construction/output/products/*
-00_graph_construction/output/organizations/*
-00_graph_construction/output/graphs/graph_full_2020.gpickle.gz
-
-
-10_graph_analysis/output/*
-
-20_community_detection/angel_elbow_cache
-20_community_detection/*.png
-20_community_detection/*.csv
-20_community_detection/*.pkl
-20_community_detection/*.txt
+*.pkl
+*.pickle
+*.gpickle
+*.json
+*.gz
+*incidence_final.csv
+*.txt
+*data
