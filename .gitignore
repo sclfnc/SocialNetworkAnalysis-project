@@ -1,17 +1,11 @@
-.claude
-.claude/*
-.vscode
-.vscode/*
-.idea
-.idea/*
-.directory
+.*
+!.gitignore
 
 *.pkl
 *.pickle
 *.gpickle
 *.json
 *.gz
-*.txt
 *data
 *.zip
 *.tar.gz
