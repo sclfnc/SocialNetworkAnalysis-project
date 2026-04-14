@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: biblio.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in openaire_api
+Warning--no author, editor, organization, or key in openaire_api
+Warning--to sort, need author or key in openaire_api
+Warning--no key, author in openaire_research_product
+Warning--no author, editor, organization, or key in openaire_research_product
+Warning--to sort, need author or key in openaire_research_product
+Warning--no key, author in openaire_data_model
+Warning--no author, editor, organization, or key in openaire_data_model
+Warning--to sort, need author or key in openaire_data_model
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--no key, author in openaire_api
+Warning--no key, author in openaire_api
+Warning--no key, author in openaire_data_model
+Warning--no key, author in openaire_research_product
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in openaire_api
+Warning--empty author in openaire_api
+Warning--no key, author in openaire_data_model
+Warning--empty author in openaire_data_model
+Warning--no key, author in openaire_research_product
+Warning--empty author in openaire_research_product
+Warning--page numbers missing in both pages and numpages fields in SciNoBo2023
+Warning--empty organization in OpenAIRE_graph_9_0_1
+Warning--empty publisher in rossetti2019exorcising
+Warning--empty address in rossetti2019exorcising
+You've used 10 entries,
+            5981 wiz_defined-function locations,
+            1528 strings with 19896 characters,
+and the built_in function-call counts, 10010 in all, are:
+= -- 1277
+> -- 317
+< -- 0
++ -- 113
+- -- 117
+* -- 708
+:= -- 942
+add.period$ -- 46
+call.type$ -- 10
+change.case$ -- 71
+chr.to.int$ -- 8
+cite$ -- 43
+duplicate$ -- 857
+empty$ -- 614
+format.name$ -- 137
+if$ -- 2427
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 140
+num.names$ -- 49
+pop$ -- 371
+preamble$ -- 1
+purify$ -- 147
+quote$ -- 0
+skip$ -- 314
+stack$ -- 0
+substring$ -- 658
+swap$ -- 75
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 232
+warning$ -- 23
+while$ -- 47
+width$ -- 0
+write$ -- 240
+(There were 23 warnings)

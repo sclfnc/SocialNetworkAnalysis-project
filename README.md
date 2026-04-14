@@ -1,9 +1,8 @@
 
-# Collaboration gaps in citation networks: a community detection and hypergraph approach
+# Collaboration gaps in citation-based networks: a community detection and hypergraph approach
 ### Social Network Analysis · University of Pisa · 2024–2025
 
 ## Research Question
-
 
 Researchers at the same institution often work on closely related problems without knowing it. Can citation network analysis surface these hidden overlaps?
 
@@ -12,177 +11,101 @@ We build two graphs from University of Pisa publications (OpenAIRE, post-2020): 
 
 ## Key Results
 
+- Adding "shared-reference" links to the citation graph reveals **18 research groups** that looked separate under citations alone but are actually working on related topics.
+- The hypergraph surfaces **~2 million paper pairs** that share a common reference pool without ever citing each other — potential collaboration gaps.
+- Of the **top-100** most likely gaps, **95 are genuine** (5 duplicates removed): all 95 fall inside the same research cluster under three independent algorithms, against a random baseline near zero.
+- Only **7 pairs** involve two recent papers (post-2020) — those are the ones where a missed collaboration could still happen today.
 
-| Finding | Value |
-|--------|-------|
-| Merge events (Leiden, communities ≥ 20 nodes) | **18** |
-| Confirmed by InfoMap (median overlap) | **≥ 0.98** |
-| Cross-disciplinary merges at FOS L4 | **83%** (15/18) |
-| Community count reduction under BC | **~21%** (Leiden & InfoMap) |
-| Modularity on G_BC | Q = 0.681 (Leiden), Q = 0.597 (InfoMap) |
-| Collaboration gap candidates | **2,000,243** paper pairs |
-| Null model citation hit rate vs. baseline | **69.1%** vs. 1.3% → z = 284.5, p < 0.01 |
-| Top-100 gap candidates in same Leiden community | **92%** (random baseline: 0.3%) |
-| Top-50 gap candidates intra-disciplinary (FOS L2) | **72%** |
+**Open questions.** The analysis is structural: shared references indicate thematic proximity, not a confirmed missed collaboration. Turning these candidates into actual recommendations would require resolving papers to individual researchers (e.g. via ORCID) and validating retrospectively whether flagged 2020 pairs eventually co-authored by 2025.
 
 
-> ANGEL resolves ambiguity through overlapping membership rather than merging:
-> only 1/18 events reaches full 3-algorithm consensus — this is structural, not
-> a disagreement.
->
-> The INTRA/CROSS ratio (83% CROSS) is resolution-dependent (γ = 0.154 produces
-> large communities that mechanically span more FOS labels). The direction of BC's
-> effect is robust; the proportion is not absolute.
-
-
-***
+---
 
 
 ## Data
 
-
 **Source:** [OpenAIRE Research Graph](https://graph.openaire.eu/)
+
+
+---
 
 
 ## Pipeline
 
+The analysis runs in five stages. Each notebook folder maps directly to a section of the report.
 
-```
-A. Data Collection & Graph Construction
-B. Graph Analysis
-C. Community Detection  (3 algorithms + comparison)
-D. Hypergraph           (construction + gap analysis)
-```
-
-
-### A — Data Collection & Graph Construction
-
-
-| Notebook | Purpose |
-|----------|---------|
-| `A1_organizations.ipynb` | Query OpenAIRE, identify 13 relevant UniPi entities |
-| `A2_relations.ipynb` | Stream 7B+ records, extract citation edges |
-| `A3_research_products.ipynb` | Collect metadata: FOS (SciNoBo), SDG, dates |
-| `A4_graph_creation.ipynb` | Build raw directed graph (4.86M nodes, 8.27M edges) |
-| `A5_final_graph_creation.ipynb` | Temporal filter, BC computation, edge blending (α=0.35) → G_Cit and G_BC |
+| Folder | Report section |
+|--------|----------------|
+| `notebooks/A_graph_creation/` | §2 Data Collection and Graph Creation |
+| `notebooks/B_graph_analysis/` | §3 Network Characterization |
+| `notebooks/C_community_detection/` | §4 Community Detection |
+| `notebooks/D_hypergraph/` | §5 Hypergraph Analysis |
+| `notebooks/E_open_question/` | §6 Latent Intellectual Communities in a Research Institution |
 
 
-### B — Graph Analysis
-
-
-| Notebook | Purpose |
-|----------|---------|
-| `B1_basic_measures.ipynb` | Degree distributions, clustering, path structure, centrality (exact via NetworKit), ER/BA null model comparison, small-world σ |
-
-
-### C — Community Detection
-
-
-| Notebook | Purpose |
-|----------|---------|
-| `C1_Leiden.ipynb` | RBConfiguration, γ sweep [0.05–10], 100-run ensemble, γ_common = 0.154 |
-| `C1_InfoMap.ipynb` | Map equation, 100-run ensemble; directed+unweighted (G_Cit) / undirected+weighted (G_BC) |
-| `C1_Angel.ipynb` | Overlapping communities, 11×4 parameter grid, 30-run ensemble (threshold=0.45, min_size=4) |
-| `C2_compare.ipynb` | 18 merge events, cross-algorithm consensus, Gini permutation test, FOS purity validation |
-
-
-### D — Hypergraph
-
-
-| Notebook | Purpose |
-|----------|---------|
-| `D1_hg_construction.ipynb` | 762,800 raw → 512,004 deduplicated → 511,990 filtered hyperedges over 61,369 nodes |
-| `D2_hg_analysis.ipynb` | S-line sensitivity, 2M gap candidates, debiased scoring, null model (z=284.5), Leiden convergence |
-
-
-***
+---
 
 
 ## Project Structure
 
-
-#### IMPORTANT NOTE: data source and folder
-The data folder is too large to be hosted on GitHub (most files exceed 100 MB). It can be downloaded from:
-
-[https://unipiit-my.sharepoint.com/my?id=%2Fpersonal%2Ff%5Fsecoli%5Fstudenti%5Funipi%5Fit%2FDocuments%2FSNA&ga=1](https://unipiit-my.sharepoint.com/my?id=%2Fpersonal%2Ff%5Fsecoli%5Fstudenti%5Funipi%5Fit%2FDocuments%2FSNA&ga=1)
-
-It is a ZIP file that must be unzipped in the same folder as the notebooks. You will find a folder structure like the following:
-
-
 ```
-├── data/
-│   ├── graph/
-│   │   ├── graph_internal_2020.gpickle   # G_Cit: 55K nodes · 217K edges
-│   │   ├── graph_combined_2020.gpickle   # G_BC:  58K nodes · 745K edges
-│   │   └── A_graph_creation/A_source_graph.gpickle  # Raw graph (4.86M nodes)
-│   ├── hypergraph/
-│   │   ├── incidence_final.csv           # 511,990 hyperedges · 61,369 nodes
-│   │   ├── node_attrs.pkl                # FOS, SDG, year
-│   │   └── families.csv                 # Dedup mapping
-│   ├── processed/                        # Intermediate JSON artifacts
-│   └── raw/                             # OpenAIRE dumps (01/–14/)
+├── data/          # graphs, hypergraph, intermediate and raw OpenAIRE data
 ├── notebooks/
 │   ├── A_graph_creation/
 │   ├── B_graph_analysis/
-│   ├── C_community_detection/            # Cached medoid partitions in output/
-│   └── D_hypergraph/
-├── SNA Final Project.pdf
-└── README.md
+│   ├── C_community_detection/
+│   ├── D_hypergraph/
+│   └── E_open_question/
+├── tex/           # LaTeX report source
+└── report.pdf
 ```
 
+#### Data folder
 
-**Further note:** graph construction in `A2_relations.ipynb` requires the original `.zip` files, which can be downloaded from the OpenAIRE graph website:
+The data folder is too large to be hosted on GitHub. Download it from:
 
-[https://zenodo.org/records/17725827](https://zenodo.org/records/17725827)
+[https://unipiit-my.sharepoint.com/my?id=%2Fpersonal%2Ff%5Fsecoli%5Fstudenti%5Funipi%5Fit%2FDocuments%2FSNA&ga=1](https://unipiit-my.sharepoint.com/my?id=%2Fpersonal%2Ff%5Fsecoli%5Fstudenti%5Funipi%5Fit%2FDocuments%2FSNA&ga=1)
 
-**Note:** at the time this README was written, the URL was unreachable.
+Unzip the archive in the project root. Intermediate artifacts in `data/processed/` are already included, so reconstructing the graphs from raw OpenAIRE dumps is not required.
 
-To work around this:
-
-1. Download all relations ZIP files into their respective folders (e.g., for `relations_01.zip` → `./data/raw/A_graph_creation/01`)
-2. Unzip everything (files are very large — it may be practical to do this in chunks)
-3. Run `A2_relations.ipynb`
-
-The results are already available in `./data/processed/A_ctations_*.json`, so there is no need to run this step again.
+> **Note:** raw relation dumps can be downloaded from [Zenodo](https://zenodo.org/records/17725827). At the time of writing, that URL was unreachable.
 
 
-***
+---
 
 
 ## Reproducibility
 
+Set up the environment with `./notebooks/requirements.txt`.
 
-For the environment, use `./notebooks/requirements.txt` to set up your own Python environment.
-Most time/memory-intensive code snippets are cached in the `output` directory (one per `./notebooks/*` subfolder).
-
-To re-run the code:
-1. Delete the corresponding cached file, or
-2. Set `force = True` (used only in the community detection algorithms, i.e. in `./notebooks/C_community_detection/*.ipynb`)
+Most time- and memory-intensive steps are cached in each notebook subfolder's `output/` directory and load automatically. To force recomputation, delete the cached file or set `force = True` (community detection notebooks only).
 
 
-Ecco la sezione **Known Issues** riscritta con l'errore specificato, la causa spiegata brevemente, e i fix verificati online (con la nota di non-test):
+---
+
 
 ## Known Issues
 
 ### `BrokenProcessPool` on Windows with Jupyter
 
-Running any notebook that uses `ProcessPoolExecutor` on Windows raises the following error:
+Running any notebook that uses `ProcessPoolExecutor` raises:
 
 ```
 BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
 ```
 
-**Root cause.** On Linux and macOS, Python spawns child processes via **`fork`**, which copies the parent process's memory directly — no re-import of the main module is needed. On Windows, only **`spawn`** is available: each worker process starts a fresh Python interpreter and attempts to re-import the `__main__` module. Inside a Jupyter notebook there is no `if __name__ == "__main__":` guard, so worker processes recursively re-execute notebook cells, crash immediately, and leave pending futures unresolvable. [stackoverflow](https://stackoverflow.com/questions/78352063/python-concurrent-futures-processpoolexecutor-causes-brokenprocesspool-error-whe)
+**Root cause.** Windows uses `spawn` instead of `fork` for child processes. Inside Jupyter there is no `if __name__ == "__main__":` guard, so worker processes recursively re-execute notebook cells and crash immediately.
 
-**Workarounds.** The following options have not been tested directly on this codebase, but are verified troubleshooting approaches based on online research: [youtube](https://www.youtube.com/watch?v=MXMvSyG8SdI)
+**Workarounds:**
+1. **Rely on the cache** — pre-computed results load automatically. Recommended for Windows users.
+2. **Replace `ProcessPoolExecutor` with `ThreadPoolExecutor`** — avoids the spawn issue, but the GIL limits CPU-bound parallelism for community detection.
+3. **Remove all multiprocessing** *(not recommended)* — makes community detection prohibitively slow.
 
-1. **Rely on the cache** — Avoid recomputing measures and community detection algorithms entirely. Pre-computed results are stored in each `output/` subfolder and are loaded automatically. This is the recommended approach for Windows users.
 
-2. **Replace `ProcessPoolExecutor` with `ThreadPoolExecutor`** — Threads share the same process and are not subject to the spawn/re-import problem. This fix is valid but comes with a trade-off: the Python GIL prevents true parallelism for CPU-bound tasks, so community detection runs will be slower than on Linux/WSL.
-
-3. **Remove all multiprocessing** *(not recommended)* — Removing parallelism entirely makes community detection algorithms prohibitively slow.
+---
 
 
 ## Authors
+
 Francesco Secoli · Elisa Calabrese · Tommaso Agostini
 University of Pisa — Social Network Analysis, 2024–2025

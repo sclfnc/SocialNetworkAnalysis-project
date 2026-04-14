@@ -1,0 +1,39 @@
+\section{Data Collection and Graph Creation}\label{sec:DC}
+
+The institutional scope was fixed by querying the OpenAIRE organizations endpoint~\cite{OpenAIRE_graph_9_0_1, openaire_api} for entities matching \texttt{Pisa}. Of the 50 candidates returned, 13 were confirmed as relevant through manual inspection: the University of Pisa, constituent departments, specialized research centers, and the Azienda Ospedaliera Universitaria Pisana. All subsequent retrieval relied on their unique organizational identifiers, sidestepping the ambiguities of string-based affiliation matching.
+
+\subsection{Retrieval and preprocessing}
+
+Filtering the OpenAIRE Graph API by the 13 organizational identifiers yielded 264,930 research products. Records not classified as publications were excluded; nested metadata structures (subjects, author identifiers) were flattened into tabular fields.
+Of the retained attributes, downstream analysis mainly relies on three: the OpenAIRE identifier, publication date, and Field of Science (FOS) labels assigned by the SciNoBo classifier~\cite{SciNoBo2023}. Full field specifications follow the OpenAIRE data model~\cite{openaire_research_product}.
+
+Citation links required a different approach: the OpenAIRE relationship dataset exceeds 7 billion records, so we processed the raw dumps via streaming rather than API calls, filtering for \texttt{Cites}/\texttt{IsCitedBy} entries~\cite{openaire_data_model} incident to at least one collected product. Bidirectional pairs were normalized to a single directed edge pointing from the citing paper to the cited one.
+
+\subsection{Citation graph construction}
+We removed all edges originating from external nodes, retaining only UniPi-to-UniPi and UniPi-to-external edges.
+
+Analysing the full 264,930-product dataset was computationally intractable; we restricted the UniPi node set to papers published from 2020 onward---a cutoff that doubles as a natural watershed in research output patterns. These are the \textit{recent} nodes (36,809). Older publications cited by at least one recent paper are kept as \textit{parent} nodes (26,053): a 2021 paper citing a foundational 2017 study keeps both in the graph. The 28 publications lacking a valid date are treated as parents when cited by a recent node.
+After removing isolates, $G_{\mathrm{Cit}}$ contains 55,078 nodes and 217,174 edges.
+
+External nodes---all publications cited by any surviving UniPi paper---are not part of $G_{\mathrm{Cit}}$ but are retained for bibliographic coupling and hypergraph construction (Section~\ref{sec:HG}). The full graph including these external nodes reaches 1,603,782 nodes and 2,694,706 edges.
+
+\subsection{Bibliographic coupling and edge weighting}
+Direct citation connects only papers that explicitly reference each other; two papers studying the same problem through the same sources remain unlinked if neither cites the other. Bibliographic coupling (BC) captures this missing proximity: two papers are coupled when they share external references. We quantify BC via the Jaccard similarity of external reference sets, and prefer it over co-citation because it is forward-looking---it requires no third-party citations and therefore applies to recent work.
+
+Raw BC scores carry three kinds of noise. \textit{Hub contamination}: a few foundational references cited across disciplines inflate BC pair counts combinatorially---we swept $\mathrm{MAX\_HUB}$ from 200 to 1,000 in steps of 100 and set it to 800, the last stable step before edge count jumps sharply (Figure~\ref{fig:bc_elbow}, left: primary elbows cluster at 800 across thresholds). \textit{Weak coupling}: we swept the Jaccard threshold from 0.02 to 0.10 in steps of 0.01 and chose $\mathrm{MIN\_BC} = 0.05$, where primary elbows fall between 0.05 and 0.06 across hub caps (Figure~\ref{fig:bc_elbow}, right). \textit{Coincidental overlap}: a single shared reference is too little evidence, so $\mathrm{MIN\_SHARED} = 2$.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{img/A_sensitivity_elbow.pdf}
+    \caption{BC edge count under joint parameter sweep Left: varying MAX\_HUB (one curve per Jaccard threshold). Right: varying Jaccard threshold (one curve per MAX\_HUB). Crosses mark primary and secondary elbows per curve.}
+    \label{fig:bc_elbow}
+\end{figure}
+
+The final edge weight blends both signals:
+\begin{equation}\label{eq:weight}
+  w(u,v) = \alpha \cdot \mathbf{1}_{\text{direct}}(u,v)
+         + (1 - \alpha) \cdot \widetilde{\mathrm{BC}}(u,v)
+\end{equation}
+where $\mathbf{1}_{\text{direct}}$ equals 1 if a direct citation exists, and $\widetilde{\mathrm{BC}}$ is the Jaccard score normalized by its 99th percentile ($\mathrm{BC}_{P99} = 0.2054$, preferred over the maximum to avoid outlier distortion).
+
+A Leiden sensitivity analysis over $\alpha \in [0.00, 0.90]$ shows community count ranging between 1,281 and 1,401---stable enough that the specific value does not determine partition granularity. Below $\alpha = 0.050$ the graph fragments drastically (15,897 communities at $\alpha = 0.00$), confirming that some direct-citation signal is necessary to maintain coherent structure. Given the plateau, $\alpha = 0.35$ is a design choice: it preserves that anchor while deliberately tilting toward BC ($1 - \alpha = 0.65$) to surface the proximity that citation alone misses.

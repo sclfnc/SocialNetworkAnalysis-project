@@ -1,5 +1,4 @@
 .*
-!.gitignore
 
 *.pkl
 *.pickle
@@ -9,3 +8,7 @@
 *data
 *.zip
 *.tar.gz
+*.md
+
+!.gitignore
+!README.md

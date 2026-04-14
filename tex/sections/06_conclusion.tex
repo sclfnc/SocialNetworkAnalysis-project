@@ -1,0 +1,55 @@
+\section{Conclusions and Limitations}
+\label{subsec:q:scope}
+
+\paragraph{Answer to the research question.}
+Yes: the institution does harbour latent intellectual communities
+recoverable from publication records alone.  The strongest evidence
+is the GW/astrophysics group---33 UniPi researchers whose shared
+intellectual context is invisible in the citation graph but fully
+legible in shared external references.  More broadly, all 200 gap
+candidates localise in BC-corrected communities, concentrate in 6
+disciplinarily coherent communities (FOS~L4 purity $\geq 45\%$,
+five of six $\geq 60\%$), and are confirmed across three algorithms
+and a bootstrap null ($p < 0.0005$).
+
+\paragraph{What the evidence does not show.}
+
+\textit{No ground truth.}  The analysis is entirely structural:
+thematic proximity and community coherence are necessary but not
+sufficient to confirm a missed collaboration.
+
+\textit{Temporal actionability is limited.}  Sixty-nine per cent of
+candidates pair two pre-2020 papers, documenting historical proximity
+rather than current opportunity.  The 9~Recent--Recent pairs are the
+operationally relevant subset.
+
+\textit{Within-discipline scope.}  The pipeline operates within
+FOS~L4 sub-disciplines at the current debiasing threshold;
+cross-disciplinary gap detection would require a different scoring
+function.
+
+\paragraph{Directions for enhancement.}
+The pipeline identifies \emph{where to look}; three targeted
+enhancements would convert its output into actionable
+recommendations.  \textit{Temporal filtering}---restricting
+candidates to Recent--Recent pairs---eliminates the 69\% reflecting
+historical accumulation as a one-line filter on existing output.
+\textit{Author-level lifting} (nodes = researchers, edges =
+co-authorship or co-citation via ORCID) would enable recommendations
+of the form ``researcher $X$ and researcher $Y$ share 15 reference
+clusters but have never co-authored''---contingent on disambiguation
+coverage.  \textit{Retrospective validation}---flagging 2020
+candidates and checking for co-authorship by 2025---would yield the
+first empirical precision and recall estimates for BC-based
+collaboration prediction at the institutional level.  The
+7~genuine Recent--Recent pairs identified in
+Section~\ref{subsec:q:temporal} are the natural starting point: few
+enough for manual review, recent enough to be actionable, and robust
+across all three algorithms.
+
+\textit{Multi-hop proximity.}  Both components measure affinity at the
+first hop only: shared direct references (HE) or shared direct
+citation neighbours (BC).  Extending to second-order
+metrics---bibliographic coupling on the hypergraph, personalized
+PageRank on the citation graph---would capture transitive proximity
+currently invisible to the scoring function.

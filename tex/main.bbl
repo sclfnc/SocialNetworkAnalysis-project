@@ -1,0 +1,140 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{10}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[ope(2024a)]%
+        {openaire_api}
+ \bibinfo{year}{2024}\natexlab{a}.
+\newblock \bibinfo{title}{{OpenAIRE} Graph {API} Documentation}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://graph.openaire.eu/docs/apis/graph-api/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[ope(2024b)]%
+        {openaire_data_model}
+ \bibinfo{year}{2024}\natexlab{b}.
+\newblock \bibinfo{title}{{OpenAIRE} Graph Data Model — Relationships}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://graph.openaire.eu/docs/data-model/relationships}
+\showURL{%
+\tempurl}
+
+
+\bibitem[ope(2024c)]%
+        {openaire_research_product}
+ \bibinfo{year}{2024}\natexlab{c}.
+\newblock \bibinfo{title}{{OpenAIRE} Graph Data Model — Research Product}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://graph.openaire.eu/docs/data-model/entities/research-product/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Fortunato and Barthelemy(2007)]%
+        {fortunato2007resolution}
+\bibfield{author}{\bibinfo{person}{Santo Fortunato} {and} \bibinfo{person}{Marc Barthelemy}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Resolution limit in community detection}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the national academy of sciences}} \bibinfo{volume}{104}, \bibinfo{number}{1} (\bibinfo{year}{2007}), \bibinfo{pages}{36--41}.
+\newblock
+
+
+\bibitem[Gialitsis et~al\mbox{.}(2023)]%
+        {SciNoBo2023}
+\bibfield{author}{\bibinfo{person}{Nikolaos Gialitsis}, \bibinfo{person}{Sotiris Kotitsas}, {and} \bibinfo{person}{Haris Papageorgiou}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{SciNoBo}: A Novel System Classifying Scholarly Communication in a Dynamically Constructed Hierarchical {Field-of-Science} Taxonomy}.
+\newblock \bibinfo{journal}{\emph{Frontiers in Research Metrics and Analytics}}  \bibinfo{volume}{8} (\bibinfo{year}{2023}).
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3389/frma.2023.1149834}
+\showDOI{\tempurl}
+
+
+\bibitem[Manghi et~al\mbox{.}(2025)]%
+        {OpenAIRE_graph_9_0_1}
+\bibfield{author}{\bibinfo{person}{Paolo Manghi}, \bibinfo{person}{Claudio Atzori}, \bibinfo{person}{Alessia Bardi}, \bibinfo{person}{Miriam Baglioni}, \bibinfo{person}{Harry Dimitropoulos}, \bibinfo{person}{Sandro La~Bruzzo}, \bibinfo{person}{Ioannis Foufoulas}, \bibinfo{person}{Andrea Mannocci}, \bibinfo{person}{Marek Horst}, \bibinfo{person}{Katerina Iatropoulou}, \bibinfo{person}{Argiro Kokogiannaki}, \bibinfo{person}{Michele De~Bonis}, \bibinfo{person}{Michele Artini}, \bibinfo{person}{Antonis Lempesis}, \bibinfo{person}{Alexandros Ioannidis}, \bibinfo{person}{Natalia Manola}, \bibinfo{person}{Pedro Principe}, \bibinfo{person}{Thanasis Vergoulis}, {and} \bibinfo{person}{Serafeim Chatzopoulos}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{OpenAIRE Graph Dataset}}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.5281/zenodo.14851262}
+\showDOI{\tempurl}
+
+
+\bibitem[{OpenAIRE}(2024)]%
+        {openaire_dedup}
+\bibfield{author}{\bibinfo{person}{{OpenAIRE}}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Deduplication --- {OpenAIRE} Graph Documentation}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://graph.openaire.eu/docs/data-provision/deduplication/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Rossetti(2019)]%
+        {rossetti2019exorcising}
+\bibfield{author}{\bibinfo{person}{Giulio Rossetti}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Exorcising the demon: Angel, efficient node-centric community discovery}. In \bibinfo{booktitle}{\emph{International Conference on Complex Networks and Their Applications}}. Springer, \bibinfo{pages}{152--163}.
+\newblock
+
+
+\bibitem[Rosvall and Bergstrom(2008)]%
+        {rosvall2008maps}
+\bibfield{author}{\bibinfo{person}{Martin Rosvall} {and} \bibinfo{person}{Carl~T Bergstrom}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Maps of random walks on complex networks reveal community structure}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the national academy of sciences}} \bibinfo{volume}{105}, \bibinfo{number}{4} (\bibinfo{year}{2008}), \bibinfo{pages}{1118--1123}.
+\newblock
+
+
+\bibitem[Traag et~al\mbox{.}(2019)]%
+        {traag2019louvain}
+\bibfield{author}{\bibinfo{person}{Vincent~A Traag}, \bibinfo{person}{Ludo Waltman}, {and} \bibinfo{person}{Nees~Jan Van~Eck}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{From Louvain to Leiden: guaranteeing well-connected communities}.
+\newblock \bibinfo{journal}{\emph{Scientific reports}} \bibinfo{volume}{9}, \bibinfo{number}{1} (\bibinfo{year}{2019}), \bibinfo{pages}{5233}.
+\newblock
+
+
+\end{thebibliography}

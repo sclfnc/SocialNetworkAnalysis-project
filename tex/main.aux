@@ -1,0 +1,131 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{OpenAIRE_graph_9_0_1}
+\citation{OpenAIRE_graph_9_0_1}
+\citation{traag2019louvain}
+\citation{rosvall2008maps}
+\citation{rossetti2019exorcising}
+\citation{SciNoBo2023}
+\citation{OpenAIRE_graph_9_0_1,openaire_api}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:I}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Data Collection and Graph Creation}{1}{section.2}\protected@file@percent }
+\newlabel{sec:DC}{{2}{1}{Data Collection and Graph Creation}{section.2}{}}
+\citation{SciNoBo2023}
+\citation{openaire_research_product}
+\citation{openaire_data_model}
+\@writefile{toc}{\contentsline {subsection}{Retrieval and preprocessing}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Citation graph construction}{2}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Bibliographic coupling and edge weighting}{2}{section*.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces BC edge count under joint parameter sweep Left: varying MAX\_HUB (one curve per Jaccard threshold). Right: varying Jaccard threshold (one curve per MAX\_HUB). Crosses mark primary and secondary elbows per curve.}}{2}{figure.caption.7}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:bc_elbow}{{1}{2}{BC edge count under joint parameter sweep Left: varying MAX\_HUB (one curve per Jaccard threshold). Right: varying Jaccard threshold (one curve per MAX\_HUB). Crosses mark primary and secondary elbows per curve}{figure.caption.7}{}}
+\newlabel{eq:weight}{{1}{2}{Bibliographic coupling and edge weighting}{equation.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Network Characterization}{2}{section.3}\protected@file@percent }
+\newlabel{sec:NC}{{3}{2}{Network Characterization}{section.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Structural summary of $G_{Cit}$ and $G_{BC}$. Neither graph contains isolated nodes by construction. $C{=}0$: fraction of nodes with zero clustering; std.\ of $C$ is $0.284$ for both graphs; $L$: mean geodesic (NetworKit, exact).}}{3}{table.caption.8}\protected@file@percent }
+\newlabel{tab:summary}{{1}{3}{Structural summary of $G_{Cit}$ and $G_{BC}$. Neither graph contains isolated nodes by construction. $C{=}0$: fraction of nodes with zero clustering; std.\ of $C$ is $0.284$ for both graphs; $L$: mean geodesic (NetworKit, exact)}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{Comparison with Random Graph Models}{3}{section*.9}\protected@file@percent }
+\newlabel{sec:null}{{3}{3}{Comparison with Random Graph Models}{section*.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Real LCCs vs null models. $\gamma $: MLE power-law exponent (real graphs only). $C$: empirical clustering; $L$: mean path length (null models via 500-node BFS sample). $\sigma = (C_\text  {real}/C_\text  {ER})\,/\,(L_\text  {real}/L_\text  {ER})$.}}{3}{table.caption.10}\protected@file@percent }
+\newlabel{tab:null}{{2}{3}{Real LCCs vs null models. $\gamma $: MLE power-law exponent (real graphs only). $C$: empirical clustering; $L$: mean path length (null models via 500-node BFS sample). $\sigma = (C_\text {real}/C_\text {ER})\,/\,(L_\text {real}/L_\text {ER})$}{table.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Complementary CDF of degree on a log-log scale for $G_{BC}$ (left) and $G_{Cit}$ (right), compared against ER and BA null models (dashed). $G_{BC}$'s tail extends further, consistent with its lower fitted exponent $\hat  {\gamma }=2.13$ vs $3.54$.}}{3}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:degree_null}{{2}{3}{Complementary CDF of degree on a log-log scale for $G_{BC}$ (left) and $G_{Cit}$ (right), compared against ER and BA null models (dashed). $G_{BC}$'s tail extends further, consistent with its lower fitted exponent $\hat {\gamma }=2.13$ vs $3.54$}{figure.caption.11}{}}
+\citation{traag2019louvain}
+\citation{fortunato2007resolution}
+\citation{rosvall2008maps}
+\citation{rossetti2019exorcising}
+\@writefile{toc}{\contentsline {subsection}{Centrality Analysis}{4}{section*.12}\protected@file@percent }
+\newlabel{sec:centrality}{{3}{4}{Centrality Analysis}{section*.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Centrality statistics (NetworKit, undirected LCC) for $G_{BC}$ and $G_{Cit}$. $>\mu +2\sigma $: node count above two std devs.}}{4}{table.caption.13}\protected@file@percent }
+\newlabel{tab:centrality}{{3}{4}{Centrality statistics (NetworKit, undirected LCC) for $G_{BC}$ and $G_{Cit}$. $>\mu +2\sigma $: node count above two std devs}{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Log-log CCDF (top) and cross-graph scatter with Spearman $\rho $ and top-$k$ overlap (bottom), for degree (left), betweenness (center), and closeness (right).}}{4}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:centrality_all}{{3}{4}{Log-log CCDF (top) and cross-graph scatter with Spearman $\rho $ and top-$k$ overlap (bottom), for degree (left), betweenness (center), and closeness (right)}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Community Detection}{4}{section.4}\protected@file@percent }
+\newlabel{sec:CD}{{4}{4}{Community Detection}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{Ensemble Stabilisation}{4}{section*.15}\protected@file@percent }
+\newlabel{subsec:cd:stabilisation}{{4}{4}{Ensemble Stabilisation}{section*.15}{}}
+\@writefile{toc}{\contentsline {subsection}{Community Structure and Quality}{4}{section*.16}\protected@file@percent }
+\newlabel{subsec:cd:results}{{4}{4}{Community Structure and Quality}{section*.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Ensemble stability and medoid partition statistics. $\mu _{\text  {NMI}}$: mean pairwise NMI across runs; Medoid: that run's mean NMI to all others. Leiden: $\gamma = 0.154$; ANGEL: threshold $= 0.45$, min\_size $= 4$. Med.: median community size.}}{5}{table.caption.17}\protected@file@percent }
+\newlabel{tab:cd-summary}{{4}{5}{Ensemble stability and medoid partition statistics. $\mu _{\text {NMI}}$: mean pairwise NMI across runs; Medoid: that run's mean NMI to all others. Leiden: $\gamma = 0.154$; ANGEL: threshold $= 0.45$, min\_size $= 4$. Med.: median community size}{table.caption.17}{}}
+\newlabel{fig:dist-leiden}{{4a}{5}{Leiden}{figure.caption.18}{}}
+\newlabel{sub@fig:dist-leiden}{{a}{5}{Leiden}{figure.caption.18}{}}
+\newlabel{fig:dist-infomap}{{4b}{5}{InfoMap}{figure.caption.18}{}}
+\newlabel{sub@fig:dist-infomap}{{b}{5}{InfoMap}{figure.caption.18}{}}
+\newlabel{fig:dist-angel}{{4c}{5}{ANGEL}{figure.caption.18}{}}
+\newlabel{sub@fig:dist-angel}{{c}{5}{ANGEL}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Community size distributions (medoid partitions).}}{5}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:size-dist}{{4}{5}{Community size distributions (medoid partitions)}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{Cross-Algorithm Synthesis}{5}{section*.19}\protected@file@percent }
+\newlabel{subsec:cd:synthesis}{{4}{5}{Cross-Algorithm Synthesis}{section*.19}{}}
+\@writefile{toc}{\contentsline {paragraph}{Caveats.}{5}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Hypergraph Analysis}{6}{section.5}\protected@file@percent }
+\newlabel{sec:HG}{{5}{6}{Hypergraph Analysis}{section.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Descriptive statistics of $H$.}}{6}{table.caption.21}\protected@file@percent }
+\newlabel{tab:hypergraph_stats}{{5}{6}{Descriptive statistics of $H$}{table.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{S-Line Sensitivity}{6}{section*.22}\protected@file@percent }
+\newlabel{subsec:hg:sline}{{5}{6}{S-Line Sensitivity}{section*.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces S-line graph statistics. $^\dag  $First threshold below the $G_{Cit}$ LCC baseline ($89.4\%$).}}{6}{table.caption.23}\protected@file@percent }
+\newlabel{tab:sline}{{6}{6}{S-line graph statistics. $^\dag $First threshold below the $G_{Cit}$ LCC baseline ($89.4\%$)}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{Gap Candidates and Validation}{6}{section*.24}\protected@file@percent }
+\newlabel{subsec:hg:gaps}{{5}{6}{Gap Candidates and Validation}{section*.24}{}}
+\newlabel{eq:debias}{{2}{6}{Gap Candidates and Validation}{equation.5.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Top 10 gap candidates by debiased score. ``Support'' is the number of shared hyperedges; FOS is the L2 domain. N/A indicates unlabelled nodes (23.1\% of the corpus).}}{7}{table.caption.25}\protected@file@percent }
+\newlabel{tab:top-gaps}{{7}{7}{Top 10 gap candidates by debiased score. ``Support'' is the number of shared hyperedges; FOS is the L2 domain. N/A indicates unlabelled nodes (23.1\% of the corpus)}{table.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{Characterisation of Top Gap Candidates}{7}{section*.26}\protected@file@percent }
+\newlabel{subsec:hg:characterisation}{{5}{7}{Characterisation of Top Gap Candidates}{section*.26}{}}
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{7}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Latent Intellectual Communities in a Research Institution}{7}{section.6}\protected@file@percent }
+\newlabel{sec:Q}{{6}{7}{Latent Intellectual Communities in a Research Institution}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{BC-corrected communities and localisation of gaps}{7}{section*.28}\protected@file@percent }
+\newlabel{subsec:q:bccorr}{{6}{7}{BC-corrected communities and localisation of gaps}{section*.28}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Fused communities in $G_\text  {BC}$. For ANGEL, any $G_\text  {CitOnly}$ community in an overlap counts as fused; the higher count reflects boundary sensitivity rather than structural change.}}{8}{table.caption.29}\protected@file@percent }
+\newlabel{tab:bccorr}{{8}{8}{Fused communities in $G_\text {BC}$. For ANGEL, any $G_\text {CitOnly}$ community in an overlap counts as fused; the higher count reflects boundary sensitivity rather than structural change}{table.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{Cross-Algorithm Convergence}{8}{section*.30}\protected@file@percent }
+\newlabel{subsec:q:conv}{{6}{8}{Cross-Algorithm Convergence}{section*.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Same-community rate for the top-100 gap candidates vs.\ random baseline (fraction of random uncited pairs sharing a community), under four algorithm-graph configurations. The $G_\text  {CitOnly}$ bar is the no-BC control.}}{8}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:cross_algo}{{5}{8}{Same-community rate for the top-100 gap candidates vs.\ random baseline (fraction of random uncited pairs sharing a community), under four algorithm-graph configurations. The $G_\text {CitOnly}$ bar is the no-BC control}{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {subsection}{Disciplinary and Thematic Profile of Gap Candidates}{8}{section*.32}\protected@file@percent }
+\newlabel{subsec:q:discip}{{6}{8}{Disciplinary and Thematic Profile of Gap Candidates}{section*.32}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces $G_\text  {BC}$ communities (Leiden) hosting gap candidates. Purity = fraction of nodes sharing the dominant FOS\nonbreakingspace L4 sub-discipline.}}{8}{table.caption.33}\protected@file@percent }
+\newlabel{tab:comms}{{9}{8}{$G_\text {BC}$ communities (Leiden) hosting gap candidates. Purity = fraction of nodes sharing the dominant FOS~L4 sub-discipline}{table.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Disciplinary composition of the 6 $G_\text  {BC}$ communities hosting gap candidates (Leiden).}}{9}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:community_profile}{{6}{9}{Disciplinary composition of the 6 $G_\text {BC}$ communities hosting gap candidates (Leiden)}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {subsection}{What Bibliographic Coupling Adds to the Hyperedge Signal}{9}{section*.36}\protected@file@percent }
+\newlabel{subsec:q:hevsbc}{{6}{9}{What Bibliographic Coupling Adds to the Hyperedge Signal}{section*.36}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Distribution of the 95 genuine gap pairs across topic clusters.}}{9}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:topic_clusters}{{7}{9}{Distribution of the 95 genuine gap pairs across topic clusters}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsection}{Temporal Structure of Gap Candidates}{9}{section*.37}\protected@file@percent }
+\newlabel{subsec:q:temporal}{{6}{9}{Temporal Structure of Gap Candidates}{section*.37}{}}
+\citation{openaire_dedup}
+\bibstyle{ACM-Reference-Format}
+\bibdata{biblio}
+\bibcite{openaire_api}{{1}{2024a}{{ope}}{{}}}
+\bibcite{openaire_data_model}{{2}{2024b}{{ope}}{{}}}
+\bibcite{openaire_research_product}{{3}{2024c}{{ope}}{{}}}
+\bibcite{fortunato2007resolution}{{4}{2007}{{Fortunato and Barthelemy}}{{}}}
+\bibcite{SciNoBo2023}{{5}{2023}{{Gialitsis et~al\mbox  {.}}}{{}}}
+\bibcite{OpenAIRE_graph_9_0_1}{{6}{2025}{{Manghi et~al\mbox  {.}}}{{}}}
+\bibcite{openaire_dedup}{{7}{2024}{{OpenAIRE}}{{}}}
+\bibcite{rossetti2019exorcising}{{8}{2019}{{Rossetti}}{{}}}
+\bibcite{rosvall2008maps}{{9}{2008}{{Rosvall and Bergstrom}}{{}}}
+\bibcite{traag2019louvain}{{10}{2019}{{Traag et~al\mbox  {.}}}{{}}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{4.65pt}
+\newlabel{tocindent2}{0pt}
+\newlabel{tocindent3}{0pt}
+\@writefile{toc}{\contentsline {subsection}{Near-Duplicate Detection}{10}{section*.38}\protected@file@percent }
+\newlabel{subsec:q:neardup}{{6}{10}{Near-Duplicate Detection}{section*.38}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions and Limitations}{10}{section.7}\protected@file@percent }
+\newlabel{subsec:q:scope}{{7}{10}{Conclusions and Limitations}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Answer to the research question.}{10}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What the evidence does not show.}{10}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Directions for enhancement.}{10}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{10}{section*.43}\protected@file@percent }
+\newlabel{TotPages}{{10}{10}{}{page.10}{}}
+\gdef \@abspage@last{10}

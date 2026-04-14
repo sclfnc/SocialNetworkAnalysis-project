@@ -1,0 +1,9 @@
+\begin{abstract}
+Citation networks within a single institution systematically underrepresent intellectual proximity: researchers cite work they already know, and knowledge travels along established collaboration paths rather than across them. We surface latent collaboration opportunities at the University of Pisa by analysing OpenAIRE data~\cite{OpenAIRE_graph_9_0_1}: $G_{\mathrm{Cit}}$ (55,078 nodes, direct citations) and $G_{\mathrm{BC}}$ (57,603 nodes, enriched with Jaccard-weighted bibliographic coupling), plus a hypergraph $H$ where each shared external reference forms a hyperedge over all UniPi papers citing it.
+
+Applying Leiden, InfoMap, and ANGEL to both graphs, we identify 18 merge events among communities with more than 20 nodes; most appear cross-disciplinary, though this reflects the chosen resolution as much as the underlying structure.
+
+Sharing external references predicts citation far more strongly than network degree alone explains. The paper pairs the hypergraph flags as gaps concentrate in precisely the communities that bibliographic coupling corrects---two representations of the same latent proximity.
+
+Drilling into one known group makes the pipeline's sensitivity concrete: thirty-three UniPi gravitational-wave researchers share hundreds of external references but generate no internal citations---the method recovers this community from bibliographic records alone, before touching any unknown case. The structural signal points in the right direction, but the pipeline cannot close the loop: turning proximity into recommendations requires author-level resolution and validation that citation topology alone cannot supply.
+\end{abstract}

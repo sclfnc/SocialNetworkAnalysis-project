@@ -1,0 +1,60 @@
+\documentclass[sigchi,nonacm]{acmart}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08emT\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{stfloats}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\copyrightyear{2025}
+\acmYear{2025}
+\acmConference[SNA '25]{Social Network Analysis '25}{2024/25}{University of Pisa, Italy}
+\acmBooktitle{Social Network Analysis '25}
+
+\begin{document}
+
+\title{Collaboration gaps in citation-based networks: a community detection and hypergraph approach}
+
+\author{Tommaso Agostini}
+\email{t.agostini3@studenti.unipi.it}
+\affiliation{\institution{Student ID: 692259}}
+
+\author{Elisa Calabrese}
+\email{e.calabrese2@studenti.unipi.it}
+\affiliation{\institution{Student ID: 684958}}
+\affiliation{\institution{\faGithub~\href{https://github.com/sna-unipi/sna-final-project-2025-2025_agostini_calabrese_secoli-1}{GitHub Repository}}}
+
+\author{Francesco Secoli}
+\email{f.secoli@studenti.unipi.it}
+\affiliation{\institution{Student ID: 502525}}
+
+
+\renewcommand{\shortauthors}{Agostini, Calabrese and Secoli}
+
+\input{sections/_abstract}
+
+
+\keywords{Social Network Analysis, Community Detection, Hypergraph, Citation Networks, Research Collaboration, Institutional Networks, OpenAIRE, Collaboration Gaps, University Networks}
+
+\maketitle
+
+\input{sections/00_introduction}
+\input{sections/01_DataCollection}
+\input{sections/02_Network_Characterization}
+\input{sections/03_Community_detection}
+\input{sections/04_Hypergraph}
+\input{sections/05_question.tex}
+\input{sections/06_conclusion.tex}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{biblio}
+
+\end{document}

@@ -1,0 +1,115 @@
+\section{Hypergraph Analysis}\label{sec:HG}
+
+$G_{BC}$ encodes bibliographic coupling as pairwise edges, but projecting to pairs loses a key distinction: when several papers all cite the same external source, the resulting clique in $G_{BC}$ treats every pair as independent, discarding the information that one shared reference mediates all connections. A hypergraph captures this directly. We define $H = (V, \mathcal{E})$ over the UniPi node set; each hyperedge corresponds to one external reference and groups every UniPi paper that cites it. Direct UniPi-to-UniPi citations are excluded, so $H$ isolates the BC signal without duplicating edges already in $G_{BC}$.
+
+$H$ is built from the same citation graph underlying $G_{BC}$ and $G_{Cit}$
+(4.86M nodes, 8.27M edges). Restricting to post-2020 UniPi papers, their parent papers, and their shared external references---while discarding external-to-external links---yields a working subgraph of 64,156 UniPi nodes, 3.01M external nodes, and 5.03M edges.
+
+Construction proceeds in three filtering steps. First, for each external reference we collect all connected UniPi papers; references linking fewer than two UniPi papers are discarded, producing 762,800 candidate hyperedges.
+Second, multiple references sharing the identical UniPi node-set are collapsed into weighted families, reducing the count to 512,004 unique hyperedges (duplicate rate: 32.9\%; maximum family weight: 1,535). Third, to suppress spurious connections from foundational references cited across many disciplines---a higher-order analogue of the hub problem in pairwise $BC$---we remove the 14 families exceeding 450 UniPi nodes.
+Table~\ref{tab:hypergraph_stats} summarises the final structure. Despite a node-degree range spanning three orders of magnitude (median~19, max~6{,}061), the hypergraph is nearly connected: 141 components form, but the LCC absorbs 99.4\% of nodes and only 2 further components reach ${\geq}\,10$ members.
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+
+  \begin{tabular}{lccc}
+    \toprule
+                   & \textbf{Median} & \textbf{Mean} & \textbf{Max} \\
+    \midrule
+    Hyperedge size & 3               & 3.9           & 423          \\
+    Node degree    & 19              & 32.2          & 6{,}061      \\
+    \midrule
+    Hyperedges     & \multicolumn{3}{c}{511,990}                    \\
+    Nodes          & \multicolumn{3}{c}{61,369}                     \\
+    \bottomrule
+  \end{tabular}
+    \caption{Descriptive statistics of $H$.}
+  \label{tab:hypergraph_stats}
+\end{table}
+
+\subsection{S-Line Sensitivity}\label{subsec:hg:sline}
+
+A single shared citation may be coincidental; multiple shared references suggest genuine thematic overlap. The s-line graph $L_s(H)$ tests this directly: it connects two hyperedges whenever they share $\geq s$ nodes, so raising $s$ retains only the densest co-memberships.
+Hyperedges with $> 80$ nodes and nodes with hyperdegree $> 300$ are excluded from matrix construction to keep computation tractable, removing 308 nodes and 235 hyperedges and leaving 511,755 working hyperedges over 61,342 nodes.
+We track connectivity via the \emph{giant ratio}---the fraction of hyperedges in the LCC of $L_s(H)$---benchmarked against the $G_{Cit}$ LCC baseline of $89.4\%$.
+
+At $s = 1$, the giant ratio is $98.8\%$---nearly the entire hypergraph connects (Table~\ref{tab:sline}). Requiring two shared references drops it to $71.5\%$, already below the $G_{Cit}$ citation baseline: sharing two external sources is more selective than any direct citation link. At $s = 3$ fewer than a third of hyperedges remain in the giant component, and beyond that the structure collapses rapidly.
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+  \begin{tabular}{cccc}
+    \toprule
+    $s$ & Edges & Components & Giant ratio (\%) \\
+    \midrule
+     1 & 46{,}442{,}020 &   5{,}966 & 98.8 \\
+     2 &  6{,}684{,}734 & 136{,}873 & 71.5$^\dag$ \\
+     3 &  1{,}776{,}668 & 337{,}476 & 30.9 \\
+     4 &    650{,}389   & 424{,}437 & 13.3 \\
+     5 &    290{,}806   & 463{,}630 &  6.0 \\
+    \bottomrule
+  \end{tabular}
+    \caption{S-line graph statistics.
+           $^\dag$First threshold below the $G_{Cit}$ LCC baseline
+           ($89.4\%$).}
+  \label{tab:sline}
+\end{table}
+
+\subsection{Gap Candidates and Validation}
+\label{subsec:hg:gaps}
+
+A \emph{gap candidate} is a pair of UniPi papers that share $\geq 1$ hyperedge but have no direct citation between them. The overlap matrix yields 2,000,243 such pairs, with a heavy-tailed support distribution: the 90th-percentile support is 4 shared hyperedges, and the top pair shares 1,927.
+
+A node appearing in many hyperedges co-occurs with many partners simply by volume; high-degree nodes dominate raw support rankings regardless of genuine thematic proximity. We debias with the formula
+\begin{equation}\label{eq:debias}
+  \text{score}_{\text{debias}}(u,v)
+  = \frac{|\mathcal{E}_u \cap \mathcal{E}_v|}
+         {\sqrt{(d_u + 1)(d_v + 1)}}
+\end{equation}
+where $d_u$, $d_v$ are citation-graph degrees (missing degrees imputed at the median; $+1$ avoids division by zero for isolated nodes). The correction is severe: Jaccard overlap between the raw and debiased top-30 is 0.111, confirming that without debiasing rankings reflect hub proximity rather than intellectual affinity.
+
+The top debiased pair (score $= 16.73$) shares 417 hyperedges between two clinical medicine papers with mean citation degree 24. Clinical medicine and physical sciences dominate the top 10 (Table~\ref{tab:top-gaps}), consistent with their majority share in the corpus.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+
+  \begin{tabular}{cccl}
+    \toprule
+    Rank & Support & Score & FOS pair \\
+    \midrule
+     1 &  417 & 16.73 & Clinical med.\ / Clinical med. \\
+     2 &  197 & 11.94 & Clinical med.\ / N/A \\
+     3 &  163 & 11.30 & Physical sci.\ / Physical sci. \\
+     4 &  259 & 11.15 & Clinical med.\ / N/A \\
+     5 &  255 & 10.93 & Clinical med.\ / Clinical med. \\
+     6 &  211 & 10.35 & Physical sci.\ / Physical sci. \\
+     7 &  140 & 10.10 & Physical sci.\ / Physical sci. \\
+     8 &  144 &  9.94 & Clinical med.\ / N/A \\
+     9 &  171 &  9.78 & Clinical med.\ / N/A \\
+    10 &  482 &  9.19 & Physical sci.\ / Physical sci. \\
+    \bottomrule
+  \end{tabular}
+    \caption{Top 10 gap candidates by debiased score. ``Support'' is the number of shared hyperedges; FOS is the L2 domain. N/A indicates unlabelled nodes (23.1\% of the corpus).}
+  \label{tab:top-gaps}
+\end{table}
+
+Do gap candidates reflect genuine intellectual proximity, or could the same co-occurrence pattern arise from degree structure alone? We test with a degree-preserving null model: \texttt{double\_edge\_swap} on $G_{Cit}$ (200 simulations), measuring citation hit rate for the top 2,000 pairs by raw hyperedge support.
+The observed hit rate is 69.1\%, against a null mean of 1.3\% ($\pm 0.24\%$), yielding $z = 284.5$ ($p < 0.01$). Shared external references predict citation at $55{\times}$ the null rate; the signal survives a degree-preserving stress test and cannot be attributed to hub nodes or degree heterogeneity.
+
+
+\subsection{Characterisation of Top Gap Candidates}
+\label{subsec:hg:characterisation}
+
+For each of the top 100 debiased gap candidates, we check two conditions against the Leiden partitions: (1) whether both nodes changed community assignment between $G_{Cit}$ and $G_{BC}$ (merge zone), and (2) whether both land in the same Leiden community on $G_{BC}$. 92\% of top-100 gap candidates share the same Leiden community on $G_{BC}$, against a random baseline of 0.3\%.
+The merge-zone statistic is uninformative: membership is universal among both gap candidates and random pairs at $\gamma = 0.154$, where community reassignment is too pervasive to discriminate. The same-community convergence is therefore the stronger signal: two independent representations---pairwise BC communities and hyperedge co-occurrence---place the same paper pairs together without having been designed to agree.
+
+Of the top 50 debiased gap candidates, 36 (72\%) connect papers in the same FOS L2 domain, and 38 (76\%) share at least one L2 domain (the difference arises because FOS labels are multi-valued and a paper may carry more than one L2 tag). The frequency of unlabelled nodes among top pairs is consistent with their base rate in the corpus (23.1\%), suggesting no systematic bias
+toward unclassified papers. Twelve pairs (24\%) span different domains entirely---the candidates that no within-domain search strategy would surface.
+The dominance of same-domain pairs is consistent with the community-detection finding that BC primarily consolidates intra-disciplinary fragments (Section~\ref{sec:CD}); cross-domain co-occurrence emerges only through the hypergraph.
+
+
+\paragraph{Limitations.}
+The highest-connected structures are precisely where cross-disciplinary overlap is most likely to appear, and both computational thresholds remove them: hyperedges with $> 80$ nodes from overlap computation, nodes with hyperdegree $> 300$ from s-line construction. Raw support counts shared reference occurrences: widely-cited methodological papers inflate co-occurrence even after hub filtering, and the debiasing corrects for citation-graph degree but not for reference-list heterogeneity.
+The null model validates citation prediction, not research fit: shared references establish thematic proximity, not that collaboration would be productive---an inference that requires domain expertise the network cannot supply.
