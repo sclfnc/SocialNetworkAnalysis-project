@@ -62,11 +62,9 @@ The analysis runs in five stages. Each notebook folder maps directly to a sectio
 
 #### Data folder
 
-The data folder is too large to be hosted on GitHub. Download it from [https://unipiit-my.sharepoint.com/:f:/g/personal/f_secoli_studenti_unipi_it/IgC07-_DMeVpS6-oTbJMppAOATrTMWyOZITyeMutpiOxFgY?e=TWSAO0](this sharepoint folder)
+The data folder is too large to be hosted on GitHub. Please repeat ad verify all the pipeline on your own.
 
-Unzip the archive in the project root. Intermediate artifacts in `data/processed/` are already included, so reconstructing the graphs from raw OpenAIRE dumps is not required.
-
-> **Note:** raw relation dumps can be downloaded from [Zenodo (Dataset version: 10.6)](https://zenodo.org/records/17725827).
+> **Note:** raw dumps can be downloaded from [Zenodo (Dataset version: 10.6)](https://zenodo.org/records/17725827).
 
 
 ---
